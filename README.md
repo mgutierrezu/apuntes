@@ -1,2 +1,2 @@
 # apuntes
-Algunos apuntes útiles de diferentes tecnología, escritos en #markdown.
+Algunos apuntes útiles de diferentes tecnologías, escritos en #markdown.
