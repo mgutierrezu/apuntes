@@ -7,6 +7,7 @@
 - Repositorio Local.
 - Cambios.
 - Ramas.
+- Merge.
 - Historial.
 - Remoto.
 - Etiquetas.
@@ -60,6 +61,8 @@ Restaurar un archivo a un commit anterior. Puedes cambiar **HEAD~1** (commit ant
     git restore --source=HEAD~1 archivo.txt
 ```
 
+> Puedes reemplazar HEAD~1 por el nombre de la rama la cual quieres recuperar el archivo.
+
 Elimina archivos de Stagin Area, GIT deja de hacer seguimiento al archivo indicado. (Útil para .gitignore)
 
 ```ssh
@@ -83,8 +86,10 @@ Ver los cambios en el directorio de trabajo. (Working Directory)
 Cambiar a otra rama del árbol de trabajo.
 
 ```ssh
-    git checkout <branch>
+    git switch <branch>
 ```
+
+> Se puede usar también **git checkout name_branch**, pero se recomienda usar switch.
 
 Crea y cambia a una nueva rama del árbol de trabajo.
 
@@ -103,6 +108,95 @@ Restaura un archivo al Working Directory y Staging Area del commit indicado en e
 ```ssh
     git checkout <hash_del_commit> archivo.txt
 ```
+
+Elimina una rama existente
+
+```ssh
+    git branch -d branch_name
+```
+
+> Se deberá hacer una confirmación con -D si la rama no esta fusionada con la rama principal.
+
+Muestra los commits de diferencia de branch_2 sobre branch_1.
+
+```ssh
+    git log branch_1..branch_2
+```
+
+Muestra la diferencia de codigo entre branch_2 sobre branch_1.
+
+```ssh
+    git diff branch_1..branch_2
+```
+
+Guarda los cambios no comiteados y nos permite cambiar de ramas.
+
+```ssh
+    git stash
+```
+
+> **git stash list:** Muestra la lista de todos los stash. <br> > **git stash show {index}:** Muestra los cambios del stash en específico.
+
+Guarda los cambios no comiteados (y que no estan en Stagin Area) y nos permite cambiar de ramas.
+
+```ssh
+    git stash push -m "Mensaje de stash"
+```
+
+Aplica los cambios del ultimo stash y lo elimina del almacen stash.
+
+```ssh
+    git stash pop
+```
+
+> Si queremos hacer por separado esta funcion se puede aplicar **git stash apply / git stash drop** respectivamente.
+
+## Merge.
+
+Combinar cambios de branch_name a la rama actual de trabajo.
+
+```ssh
+    git merge <branch_name>
+```
+
+> Por defecto el comando **git merge** realiza una merge tipo Fast-forward. <br>
+> Si existen cambios en branch_name y en la rama actual de trabajo (puede ser **main** por defecto), se ejecutará un **3-ways merge**.
+
+Combinar cambios de branch_name a la rama actual de trabajo, modalidad merge-commit (sin Fast-forward).
+
+```ssh
+    git merge --no-ff <branch_name>
+```
+
+Revertir los cambio realizados por un merge.
+
+```ssh
+    git revert -m 1 HEAD
+```
+
+> **-m 1:** Significa que revierte la fusión al padre principal (main).
+
+Tomar algunos cambio realizados en otros commits sin hacer un merge.
+
+```ssh
+    git cherry-pick <Hash_commit>
+```
+
+Realiza un cambio en la base de la rama actual a la rama destino, dejando el historial de commits de manera lineal. (facilita el merge Fast-forward)
+
+```ssh
+    git rebase <rama_de_destino>
+```
+
+
+Junta 2 commits consecutivos pequeños, se debe de eliminar la rama fusionada para limpiar el historial. (No se utiliza mucho este comando)
+
+```ssh
+    git merge --squash <rama_a_fusionar>
+```
+
+
+
 
 ## Historial.
 
@@ -202,10 +296,26 @@ Muestra el estado del directorio de trabajo (Working Directory) y el área de pr
     git status
 ```
 
+Herramienta para buscar un bug en el historial de commits, realiza una busqueda binara para encontrar el error (bug).
+
+```ssh
+    git bisect start
+
+    git bisect good  / git bisect bad
+
+    git bisect reset
+```
+
 Crea atajos de teclado para evitar la redundancia en la escritura del código (Boilerplate text).
 
 ```ssh
     git config --global alias.<nombre> <comando>
+```
+
+Muestra de manera grafica los commit en el historial. (Útil para ver merge)
+
+```ssh
+    git log --oneline --all --graph
 ```
 
 ## Configuración.
