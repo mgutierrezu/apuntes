@@ -151,6 +151,20 @@ Aplica los cambios del ultimo stash y lo elimina del almacen stash.
 
 > Si queremos hacer por separado esta funcion se puede aplicar **git stash apply / git stash drop** respectivamente.
 
+Publica una rama de desarrollo en el repositorio remoto.
+
+```ssh
+    git push -u origin <nombre_rama>
+```
+
+> (**-u** = --set -upstream)
+
+Elimina una rama de desarrollo del repositorio remoto.
+
+```ssh
+    git push -d origin <nombre_rama>
+```
+
 ## Merge.
 
 Combinar cambios de branch_name a la rama actual de trabajo.
@@ -188,15 +202,11 @@ Realiza un cambio en la base de la rama actual a la rama destino, dejando el his
     git rebase <rama_de_destino>
 ```
 
-
 Junta 2 commits consecutivos pequeños, se debe de eliminar la rama fusionada para limpiar el historial. (No se utiliza mucho este comando)
 
 ```ssh
     git merge --squash <rama_a_fusionar>
 ```
-
-
-
 
 ## Historial.
 
@@ -270,6 +280,46 @@ Muestra nombre, fecha y hora de los cambios (commits) realizados en un archivo.
 
 ## Remoto.
 
+Enviar los cambios locales confirmados a un repositorio remoto.
+
+```ssh
+    git push
+```
+
+Trae los cambios desde un repositorio remoto a tu repositorio local.
+
+```ssh
+    git pull
+```
+
+> **git pull** = git fetch + git merge
+
+Trae los cambios desde un repositorio remoto a tu repositorio local y se realiza un rebase de tus cambios locales sobre los cambios remotos.
+
+```ssh
+    git pull --rebase
+```
+
+> **git pull --rebase** = git pull + git rebase
+
+Recupera todos los cambios y referencias de un repositorio remoto a tu repositorio local. (Por defecto es repositorio "origin" y la rama de "main")
+
+```ssh
+    git fetch
+```
+
+Clona el repositorio de la URL en el directorio actual. (puedes crear un nuevo directorio de trabajo)
+
+```ssh
+    git clone URL_HTTPS_PROYECTO <nombre_directorio_opcional>
+```
+
+Muestra una lista de los repositorios remotos.
+
+```ssh
+    git remote -v
+```
+
 ## Etiquetas.
 
 Crea una etiqueta para hacer referencia al commit señalado.
@@ -287,6 +337,18 @@ Crear una etiqueta y asignar un mensaje a la etiquera respectiva en el commit se
 ```
 
 > Ejemplo: git tag -a v1.0 abc123456 -m "Versión 1.0 - lanzamiento inicial del proyecto"
+
+Subir la etiqueta al repositorio remoto.
+
+```ssh
+    git push origin <tag_name>
+```
+
+Eliminar la etiqueta del repositorio remoto.
+
+```ssh
+    git push origin --delete <tag_name>
+```
 
 ## Utilidades.
 
@@ -339,3 +401,10 @@ Abrir configuración en editor de texto.
 ```
 
 ## Otros.
+
+Elimina referencias locales a ramas remotas que ya no existen en repositorio remoto especificado (**origin**).
+
+```ssh
+    git remote prune origin
+```
+
