@@ -43,6 +43,14 @@ Registra los cambios en el repositorio. (Agregar mensaje simple y descriptivo)
     git commit -m "Mensaje descriptivo al commit"
 ```
 
+Descartar un commit hasta la posición X, se deberá de hacer un **git push origin +nombre_rama** para actualizar los cambios en remoto.
+
+```ssh
+    git reset HEAD~X
+```
+
+> Por defecto es --mixed, puedes usar --soft o --hard dependiendo de los requerimientos del cambio.
+
 Restaurar un archivo a su estado en el último commit.
 
 ```ssh
@@ -79,6 +87,12 @@ Ver los cambios en el directorio de trabajo. (Working Directory)
 
 ```ssh
     git diff
+```
+
+Modifica el commit mas reciente de la rama actual.
+
+```ssh
+    git commit --amend -m "Nuevo Mensaje"
 ```
 
 ## Ramas.
@@ -202,6 +216,14 @@ Realiza un cambio en la base de la rama actual a la rama destino, dejando el his
     git rebase <rama_de_destino>
 ```
 
+Reorganiza, edita o combina commits en la historia de la rama actual a partir del commit especificado en el Hash. (rebase interactivo)
+
+```ssh
+    git rebase -i <hash_del_commit>
+```
+> Agregando "^" al final del CLI. Puedes cambiar los mensajes de los commits remplazando "pick" por "reword".
+
+
 Junta 2 commits consecutivos pequeños, se debe de eliminar la rama fusionada para limpiar el historial. (No se utiliza mucho este comando)
 
 ```ssh
@@ -215,6 +237,14 @@ Muestra el historial de commits.
 ```ssh
     git log
 ```
+
+Muestra todas las acciones realizadas en el historial de commits.
+
+```ssh
+    git reflog
+```
+
+> Util para recuperar commits eliminados.
 
 Muestra el historial de commits en un archivo en especifico. (nombre de archivo siempre al final del CLI)
 
@@ -407,4 +437,3 @@ Elimina referencias locales a ramas remotas que ya no existen en repositorio rem
 ```ssh
     git remote prune origin
 ```
-
