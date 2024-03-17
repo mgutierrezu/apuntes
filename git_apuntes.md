@@ -4,16 +4,16 @@
 
 ## Clasificación de comandos GIT:
 
-- Repositorio Local.
-- Cambios.
-- Ramas.
-- Merge.
-- Historial.
-- Remoto.
-- Etiquetas.
-- Utilidades.
-- Configuración.
-- Otros.
+- [Repositorio Local](#repositorio-local)
+- [Cambios](#cambios)
+- [Ramas](#ramas)
+- [Merge](#merge)
+- [Historial](#historial)
+- [Remoto](#remoto)
+- [Etiquetas](#etiquetas)
+- [Utilidades](#utilidades)
+- [Configuración](#configuración)
+- [Otros](#otros)
 
 ## Repositorio Local.
 

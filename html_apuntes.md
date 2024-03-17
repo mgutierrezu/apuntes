@@ -2,25 +2,22 @@
 
 > Se realizarán cambios mientras más se vaya agregando información en los apuntes. Mientras tanto se realizará la siguiente clasificación:
 
-## Clasificación de comandos GIT:
+## Clasificación de contenidos HTML:
 
-- Estructura básica
-- Etiquetas (Tags)
-- Atributos (Attributes)
-- Formularios (Forms)
-- Multimedia
-- Listas
-- Tablas
-- Enlaces (Links)
-- Metadatos
-- Elementos de Texto
-- Elementos de Bloque
-- Elementos de Semántica
-- Elementos de Formato de Texto
-- Elementos de HTML5
-- Elementos de Accesibilidad
-- Comentarios
-- Otros
+- [Estructura básica](#estructura-basica)
+- [Etiquetas (Tags)](#etiquetas-tags)
+- [Atributos (Attributes)](#atributos-attributes)
+- [Formularios (Forms)](#formularios-forms)
+- [Multimedia](#multimedia)
+- [Listas](#listas)
+- [Tablas](#tablas)
+- [Enlaces (Links)](#enlaces-links)
+- [Metadatos](#metadatos)
+- [Elementos de Texto](#elementos-de-texto)
+- [Elementos de Bloque](#elementos-de-bloque)
+- [Elementos de Formato de Texto](#elementos-de-formato-de-texto)
+- [Comentarios](#comentarios)
+- [Otros](#otros)
 
 ## Estructura básica
 
@@ -991,13 +988,165 @@ spellcheck: Indica si se debe verificar la ortografía del texto del elemento.
 
 ## Elementos de Bloque
 
-## Elementos de Semántica
+- ### Etiquetas de bloque.
+
+DIV: Define una sección genérica o un contenedor.
+
+```html
+<div>Contenido aquí</div>
+```
+
+SECTION: Se utiliza para dividir el contenido en secciones temáticas o áreas distintas.
+
+```html
+<section>Contenido de la sección</section>
+```
+
+ARTICLE: Se utiliza para representar una composición autónoma, como un artículo, una entrada de blog o un comentario.
+
+```html
+<article>Contenido del artículo</article>
+```
+
+ASIDE: Se utiliza para representar contenido secundario que está relacionado con el contenido principal, pero que puede ser considerado independiente de él.
+
+```html
+<aside>Contenido relacionado</aside>
+```
+
+BLOCKQUOTE: Se utiliza para representar una sección de texto que ha sido citada de otro origen.
+
+```html
+<blockquote>Cita larga aquí</blockquote>
+```
+
+- ### Atributos de bloque.
+
+id: Se utiliza para identificar de manera única un elemento en un documento HTML.
+
+```html
+<div id="seccion1">Contenido de la sección</div>
+```
+
+class: Se utiliza para aplicar estilos o comportamientos específicos a uno o más elementos.
+
+```html
+<article class="contenido">Contenido del artículo</article>
+```
+
+style: Se utiliza para aplicar estilos específicos directamente al elemento.
+
+```html
+<header style="background-color: #f0f0f0;">Encabezado de la página</header>
+```
+
+title: Define información adicional sobre el elemento que se muestra como un tooltip.
+
+```html
+<footer title="Pie de página">Información adicional</footer>
+```
+
+role: Se utiliza para especificar el papel del elemento para tecnologías de asistencia como lectores de pantalla.
+
+```html
+<nav role="navigation">Enlaces de navegación</nav>
+```
+
+hidden: Se utiliza para ocultar un elemento del diseño de la página.
+
+```html
+<aside hidden>Contenido relacionado</aside>
+```
 
 ## Elementos de Formato de Texto
 
-## Elementos de HTML5
+- ### Etiquetas de Formato de Texto.
 
-## Elementos de Accesibilidad
+STRONG: Define texto importante visualmente resaltado.
+
+```html
+<strong>Texto importante</strong>
+```
+
+EM: Define texto enfatizado.
+
+```html
+<em>Texto enfatizado</em>
+```
+
+U: Define texto subrayado.
+
+```html
+<u>Texto subrayado</u>
+```
+
+B: Define texto en negrita.
+
+```html
+<b>Texto en negrita</b>
+```
+
+I: Define texto en cursiva.
+
+```html
+<i>Texto en cursiva</i>
+```
+
+SMALL: Define texto más pequeño.
+
+```html
+<small>Texto pequeño</small>
+```
+
+MARK: Define texto resaltado o marcado.
+
+```html
+<mark>Texto marcado</mark>
+```
+
+DEL: Define texto eliminado o tachado.
+
+```html
+<del>Texto eliminado</del>
+```
+
+INS: Define texto insertado.
+
+```html
+<ins>Texto insertado</ins>
+```
+
+SUB: Define texto subíndice.
+
+```html
+<sub>Texto subíndice</sub>
+```
+
+- ### Atributos de Formato de Texto.
+
+lang: Define el idioma del contenido del elemento.
+
+```html
+<i lang="en">Texto en cursiva</i>
+```
+
+dir: Define la dirección del texto dentro del elemento (ltr: de izquierda a derecha, rtl: de derecha a izquierda).
+
+```html
+<small dir="rtl">Texto pequeño</small>
+```
+
+aria-label: Define una etiqueta accesible para el elemento.
+
+```html
+<mark aria-label="Texto marcado">Texto marcado</mark>
+```
+
+aria-describedby: Define el identificador de otro elemento que proporciona una descripción del elemento actual.
+
+```html
+<del aria-describedby="descripcion">Texto eliminado</del>
+```
 
 ## Comentarios
 
